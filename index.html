@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AgroNova | منصة الزراعة الذكية لمزارع التصدير</title>
+  <meta name="description" content="AgroNova: مراقبة التربة بالحساسات، صور الأقمار الصناعية، والتنبؤ بالأمراض والطقس في منصة واحدة لمزارع التصدير. احجز عرض تجريبي." />
+  <meta name="theme-color" content="#121E17" />
+
+  <!-- Open Graph: how the link looks when shared on WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AgroNova | اعرف حالة أرضك ومحصولك لحظة بلحظة" />
+  <meta property="og:description" content="مراقبة التربة، صور الأقمار الصناعية، والتنبؤ بالأمراض في منصة واحدة لمزارع التصدير." />
+  <meta property="og:image" content="assets/img/field-sensors.jpg" />
+  <meta property="og:locale" content="ar_EG" />
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ============ Icon sprite ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-satellite" viewBox="0 0 24 24"><path d="M13 7 9 3 5 7l4 4"/><path d="m17 11 4 4-4 4-4-4"/><path d="m8 12 4 4 6-6-4-4Z"/><path d="m16 8 3-3"/><path d="M9 21a6 6 0 0 0-6-6"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973"/><path d="m13 12-3 5h4l-3 5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+    <symbol id="i-pie" viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15M9 3.236v15"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8M16 14v4M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></symbol>
+    <symbol id="i-waves" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main" data-i18n="skip">تخطي إلى المحتوى</a>
+
+<!-- ============ 1. Navbar ============ -->
+<header class="nav" id="top">
+  <div class="container nav__inner">
+    <a href="#top" class="brand" aria-label="AgroNova">
+      <img src="assets/img/logo.png" alt="" width="34" height="37" />
+      <span class="brand__name" data-i18n="brand">AgroNova</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#features" data-i18n="nav.features">المميزات</a>
+      <a href="#how" data-i18n="nav.how">إزاي بتشتغل</a>
+      <a href="#faq" data-i18n="nav.faq">الأسئلة الشائعة</a>
+      <a href="#demo" class="btn btn--primary nav__cta-mobile" data-i18n="cta.book">احجز عرض تجريبي</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="lang" type="button" id="langToggle" aria-label="Switch to English">
+        <svg class="ic"><use href="#i-globe"/></svg><span id="langLabel">EN</span>
+      </button>
+      <a href="#demo" class="btn btn--primary nav__cta" data-i18n="cta.book">احجز عرض تجريبي</a>
+      <button class="nav__burger" type="button" id="navBurger" aria-expanded="false" aria-controls="navLinks" aria-label="القائمة">
+        <svg class="ic ic--open"><use href="#i-menu"/></svg>
+        <svg class="ic ic--close"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ 2. Hero ============ -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <span class="pill pill--dark"><span class="dot"></span><span data-i18n="hero.pill">منصة زراعة ذكية لمزارع التصدير</span></span>
+      <h1 data-i18n="hero.title">اعرف حالة أرضك ومحصولك لحظة بلحظة، وخد قرارك بالأرقام</h1>
+      <p class="hero__sub" data-i18n="hero.sub">حساسات في التربة، صور أقمار صناعية، وتنبؤ بالأمراض والطقس، كلها في منصة واحدة. توصيات واضحة توصل لمدير الإنتاج على الداشبورد والموبايل.</p>
+      <div class="hero__ctas">
+        <a href="#demo" class="btn btn--primary btn--lg">
+          <svg class="ic"><use href="#i-calendar"/></svg><span data-i18n="cta.book">احجز عرض تجريبي</span>
+        </a>
+        <a href="#how" class="btn btn--ghost-light btn--lg">
+          <svg class="ic"><use href="#i-play"/></svg><span data-i18n="cta.how">شوف إزاي بتشتغل</span>
+        </a>
+      </div>
+      <ul class="hero__ticks">
+        <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="hero.t1">مراقبة التربة بالـ IoT</span></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="hero.t2">صور أقمار صناعية</span></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="hero.t3">تنبؤ بالأمراض</span></li>
+      </ul>
+    </div>
+
+    <!-- Laptop + phone mockup -->
+    <div class="hero__visual" aria-label="لقطة توضيحية من داشبورد AgroNova" data-i18n-aria="hero.visualAria" role="img">
+      <div class="laptop">
+        <div class="laptop__screen">
+          <div class="dash">
+            <aside class="dash__side" aria-hidden="true">
+              <img src="assets/img/logo.png" alt="" />
+              <i class="on"></i><i></i><i></i><i></i><i></i>
+            </aside>
+            <div class="dash__main">
+              <div class="dash__top">
+                <div>
+                  <b data-i18n="m.farmName">المزرعة الرئيسية</b>
+                  <small data-i18n="m.farmMeta">420 فدان · 12 قطاع · آخر تحديث منذ 4 دقائق</small>
+                </div>
+                <span class="dash__live"><span class="dot"></span><span data-i18n="m.live">مباشر</span></span>
+              </div>
+              <div class="dash__kpis">
+                <div class="kpi"><span data-i18n="m.moisture">رطوبة التربة</span><b>31<small>%</small></b><em class="up">+2.4</em></div>
+                <div class="kpi"><span data-i18n="m.salinity">الملوحة EC</span><b>2.4<small>dS/m</small></b><em>±0.1</em></div>
+                <div class="kpi"><span data-i18n="m.temp">حرارة التربة</span><b>24<small>°C</small></b><em class="down">−1.2</em></div>
+                <div class="kpi"><span data-i18n="m.ndvi">متوسط NDVI</span><b>0.71</b><em class="up">+0.03</em></div>
+              </div>
+              <div class="dash__body">
+                <div class="dash__alerts">
+                  <b data-i18n="m.alertsTitle">التنبيهات</b>
+                  <div class="al al--crit"><svg class="ic"><use href="#i-alert"/></svg><span data-i18n="m.al1">خطر لفحة · B4</span></div>
+                  <div class="al al--warn"><svg class="ic"><use href="#i-droplet"/></svg><span data-i18n="m.al2">ري مطلوب · C1</span></div>
+                  <div class="al al--warn"><svg class="ic"><use href="#i-waves"/></svg><span data-i18n="m.al3">ملوحة مرتفعة · A2</span></div>
+                  <div class="al al--ok"><svg class="ic"><use href="#i-check"/></svg><span data-i18n="m.al4">8 قطاعات مستقرة</span></div>
+                </div>
+                <div class="dash__map">
+                  <svg viewBox="0 0 300 170" class="fieldmap" aria-hidden="true">
+                    <use href="#fieldmap-tiles"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="laptop__base"></div>
+      </div>
+
+      <div class="phone">
+        <div class="phone__screen">
+          <div class="phone__notch"></div>
+          <div class="pn">
+            <div class="pn__head"><img src="assets/img/logo.png" alt="" /><span data-i18n="m.now">الآن</span></div>
+            <b data-i18n="m.pnTitle">تنبيه: خطر لفحة متأخرة</b>
+            <p data-i18n="m.pnBody">قطاع B4 · طماطم. رطوبة نسبية 92% لمدة 10 ساعات. يُنصح بالرش الوقائي خلال 24 ساعة.</p>
+          </div>
+          <div class="pc">
+            <span data-i18n="m.pcTitle">رطوبة التربة · C1 · 7 أيام</span>
+            <svg viewBox="0 0 120 50" aria-hidden="true">
+              <line x1="0" y1="34" x2="120" y2="34" class="pc__th"/>
+              <polyline points="0,14 17,18 34,22 51,20 68,27 85,31 102,36 120,40" class="pc__line"/>
+              <circle cx="120" cy="40" r="3.2" class="pc__dot"/>
+            </svg>
+            <small data-i18n="m.pcNote">أقل من حد الري (22%)</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Shared field-map tiles (sequential single-hue NDVI ramp) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="fieldmap-tiles">
+      <rect x="0" y="0" width="300" height="170" rx="8" class="fm-bg"/>
+      <path d="M10 10h66v46H10z" class="n4"/><path d="M80 10h66v46H80z" class="n2"/><path d="M150 10h66v46h-66z" class="n4"/><path d="M220 10h70v46h-70z" class="n3"/>
+      <path d="M10 60h66v46H10z" class="n3"/><path d="M80 60h66v46H80z" class="n4"/><path d="M150 60h66v46h-66z" class="n3"/><path d="M220 60h70v46h-70z" class="n1"/>
+      <path d="M10 110h66v50H10z" class="n2"/><path d="M80 110h66v50H80z" class="n4"/><path d="M150 110h66v50h-66z" class="n3"/><path d="M220 110h70v50h-70z" class="n4"/>
+      <rect x="220" y="60" width="70" height="46" class="fm-alert"/>
+      <g class="fm-sensors">
+        <circle cx="43" cy="33" r="3"/><circle cx="113" cy="33" r="3"/><circle cx="183" cy="33" r="3"/><circle cx="255" cy="33" r="3"/>
+        <circle cx="43" cy="83" r="3"/><circle cx="113" cy="83" r="3"/><circle cx="183" cy="83" r="3"/><circle cx="255" cy="83" r="3"/>
+        <circle cx="43" cy="135" r="3"/><circle cx="113" cy="135" r="3"/><circle cx="183" cy="135" r="3"/><circle cx="255" cy="135" r="3"/>
+      </g>
+    </g>
+  </defs>
+</svg>
+
+<!-- ============ 3. The problem ============ -->
+<section class="section" id="problem">
+  <div class="container">
+    <header class="sec-head">
+      <span class="eyebrow" data-i18n="problem.eyebrow">التحدي</span>
+      <h2 data-i18n="problem.title">قرارات كبيرة بتتاخد كل يوم ببيانات ناقصة</h2>
+      <p data-i18n="problem.lead">مدير الإنتاج في مزرعة تصدير مسؤول عن مئات الأفدنة ومواعيد شحن ومواصفات جودة صارمة، وأغلب المعلومة اللي في إيده متأخرة أو تقديرية.</p>
+    </header>
+    <div class="grid grid--3">
+      <article class="card card--problem reveal">
+        <span class="icon-box icon-box--warn"><svg class="ic"><use href="#i-droplet"/></svg></span>
+        <h3 data-i18n="problem.c1t">الري والتسميد بالتقدير</h3>
+        <p data-i18n="problem.c1p">كميات المياه والسماد بتتحدد بالخبرة والعين، مش بقراءة فعلية لحالة التربة في كل قطاع.</p>
+      </article>
+      <article class="card card--problem reveal">
+        <span class="icon-box icon-box--warn"><svg class="ic"><use href="#i-clock"/></svg></span>
+        <h3 data-i18n="problem.c2t">الأمراض بتتكتشف متأخر</h3>
+        <p data-i18n="problem.c2p">لما الإصابة تبان بالعين بيكون جزء من المحصول راح، والرش بقى علاج مش وقاية.</p>
+      </article>
+      <article class="card card--problem reveal">
+        <span class="icon-box icon-box--warn"><svg class="ic"><use href="#i-wallet"/></svg></span>
+        <h3 data-i18n="problem.c3t">التكلفة مش واضحة لكل محصول</h3>
+        <p data-i18n="problem.c3p">المصاريف متفرقة بين دفاتر وشيتات، وصعب تعرف كل محصول كلّفك كام وكسبك كام.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. How it works ============ -->
+<section class="section section--tint" id="how">
+  <div class="container how">
+    <div class="how__media reveal">
+      <img src="assets/img/field-sensors.jpg" alt="حساسات تربة تعمل بالطاقة الشمسية في حقل" data-i18n-alt="how.imgAlt" loading="lazy" width="1279" height="811" />
+      <div class="how__badge">
+        <span class="dot"></span>
+        <div><b data-i18n="how.badgeT">قراءات مستمرة من الحقل</b><small data-i18n="how.badgeS">رطوبة · ملوحة · حرارة</small></div>
+      </div>
+    </div>
+    <div class="how__copy">
+      <header class="sec-head sec-head--start">
+        <span class="eyebrow" data-i18n="how.eyebrow">إزاي بتشتغل</span>
+        <h2 data-i18n="how.title">من التربة لقرارك في 3 خطوات</h2>
+      </header>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__num">1</span>
+          <div>
+            <h3><svg class="ic"><use href="#i-cpu"/></svg><span data-i18n="how.s1t">قياس من قلب الأرض</span></h3>
+            <p data-i18n="how.s1p">حساسات في التربة تقيس الرطوبة والملوحة والحرارة وغيرها، على مدار اليوم ولكل قطاع.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">2</span>
+          <div>
+            <h3><svg class="ic"><use href="#i-satellite"/></svg><span data-i18n="how.s2t">تحليل البيانات مع بعض</span></h3>
+            <p data-i18n="how.s2p">صور الأقمار الصناعية وبيانات الطقس بتتحلل مع قراءات الحساسات، عشان تشوف الصورة كاملة.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">3</span>
+          <div>
+            <h3><svg class="ic"><use href="#i-bell"/></svg><span data-i18n="how.s3t">توصية في إيدك</span></h3>
+            <p data-i18n="how.s3p">توصيات وتنبيهات واضحة توصل لمدير الإنتاج على الداشبورد والموبايل: إيه المشكلة، فين، وتعمل إيه.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. Features ============ -->
+<section class="section" id="features">
+  <div class="container">
+    <header class="sec-head">
+      <span class="eyebrow" data-i18n="features.eyebrow">المميزات</span>
+      <h2 data-i18n="features.title">كل اللي محتاجه عشان تدير المزرعة بالأرقام</h2>
+    </header>
+    <div class="features">
+      <article class="card feature reveal">
+        <span class="icon-box"><svg class="ic"><use href="#i-cpu"/></svg></span>
+        <h3 data-i18n="features.f1t">مراقبة التربة بالـ IoT</h3>
+        <p data-i18n="features.f1p">قراءات مستمرة للرطوبة والملوحة والحرارة لكل قطاع، فتروي وتسمّد على قد الاحتياج.</p>
+      </article>
+      <article class="card feature reveal">
+        <span class="icon-box"><svg class="ic"><use href="#i-satellite"/></svg></span>
+        <h3 data-i18n="features.f2t">صور الأقمار الصناعية</h3>
+        <p data-i18n="features.f2p">مؤشر صحة النبات (NDVI) لكل المزرعة، تشوف القطاعات الضعيفة قبل ما تبان على الأرض.</p>
+      </article>
+      <article class="card feature reveal">
+        <span class="icon-box"><svg class="ic"><use href="#i-cloud"/></svg></span>
+        <h3 data-i18n="features.f3t">التنبؤ بالأمراض والطقس</h3>
+        <p data-i18n="features.f3p">تنبيه بدري لما الظروف تبقى مناسبة لانتشار مرض، وتوقعات طقس تخطط بيها للرش والري.</p>
+      </article>
+      <article class="card feature reveal">
+        <span class="icon-box"><svg class="ic"><use href="#i-mic"/></svg></span>
+        <h3 data-i18n="features.f4t">مساعد صوتي باللهجة المصرية</h3>
+        <p data-i18n="features.f4p">اسأل بصوتك زي ما بتتكلم: «قطاع 3 محتاج ري النهارده؟» وخد الرد في ثواني.</p>
+      </article>
+      <article class="card feature reveal">
+        <span class="icon-box"><svg class="ic"><use href="#i-pie"/></svg></span>
+        <h3 data-i18n="features.f5t">السجل المالي وتكلفة كل محصول</h3>
+        <p data-i18n="features.f5p">كل مصروف متسجل على المحصول والقطاع، فتعرف تكلفة الفدان وهامش الربح بوضوح.</p>
+      </article>
+      <a href="#demo" class="card feature feature--cta reveal">
+        <h3 data-i18n="features.ctaT">عايز تشوفها على مزرعتك؟</h3>
+        <p data-i18n="features.ctaP">هنوريك المنصة على بيانات شبه مزرعتك في عرض تجريبي.</p>
+        <span class="link-arrow"><span data-i18n="cta.book">احجز عرض تجريبي</span><svg class="ic flip"><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. Product preview ============ -->
+<section class="section section--dark" id="preview">
+  <div class="container">
+    <header class="sec-head">
+      <span class="eyebrow eyebrow--light" data-i18n="preview.eyebrow">معاينة المنتج</span>
+      <h2 data-i18n="preview.title">شوف المنصة من جوه</h2>
+      <p data-i18n="preview.lead">ثلاث شاشات بيستخدمها مدير الإنتاج كل يوم.</p>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Product screens">
+      <button role="tab" id="tab-map" aria-controls="panel-map" aria-selected="true" class="tab"><svg class="ic"><use href="#i-map"/></svg><span data-i18n="preview.tab1">خريطة المزرعة</span></button>
+      <button role="tab" id="tab-alerts" aria-controls="panel-alerts" aria-selected="false" class="tab" tabindex="-1"><svg class="ic"><use href="#i-bell"/></svg><span data-i18n="preview.tab2">التنبيهات</span></button>
+      <button role="tab" id="tab-cost" aria-controls="panel-cost" aria-selected="false" class="tab" tabindex="-1"><svg class="ic"><use href="#i-chart"/></svg><span data-i18n="preview.tab3">تقرير التكلفة</span></button>
+    </div>
+
+    <div class="screen">
+      <div class="screen__bar" aria-hidden="true"><i></i><i></i><i></i><span>app.agronova</span></div>
+
+      <!-- Map panel -->
+      <div class="panel" role="tabpanel" id="panel-map" aria-labelledby="tab-map">
+        <div class="pmap">
+          <div class="pmap__map">
+            <svg viewBox="0 0 300 170" class="fieldmap fieldmap--lg" role="img" aria-label="خريطة قطاعات المزرعة ملونة حسب مؤشر NDVI">
+              <use href="#fieldmap-tiles"/>
+              <g class="fm-labels">
+                <text x="43" y="24">A1</text><text x="113" y="24">A2</text><text x="183" y="24">A3</text><text x="255" y="24">A4</text>
+                <text x="43" y="74">B1</text><text x="113" y="74">B2</text><text x="183" y="74">B3</text><text x="255" y="74">B4</text>
+                <text x="43" y="126">C1</text><text x="113" y="126">C2</text><text x="183" y="126">C3</text><text x="255" y="126">C4</text>
+              </g>
+            </svg>
+            <div class="legend">
+              <span data-i18n="preview.ndviLow">NDVI منخفض</span>
+              <i class="n1"></i><i class="n2"></i><i class="n3"></i><i class="n4"></i>
+              <span data-i18n="preview.ndviHigh">مرتفع</span>
+            </div>
+          </div>
+          <div class="pmap__side">
+            <div class="sector">
+              <div class="sector__head">
+                <b data-i18n="preview.secName">قطاع B4 · طماطم</b>
+                <span class="status status--crit"><svg class="ic"><use href="#i-alert"/></svg><span data-i18n="preview.secStatus">يحتاج متابعة</span></span>
+              </div>
+              <dl class="readings">
+                <div><dt><svg class="ic"><use href="#i-droplet"/></svg><span data-i18n="m.moisture">رطوبة التربة</span></dt><dd>27%</dd></div>
+                <div><dt><svg class="ic"><use href="#i-waves"/></svg><span data-i18n="m.salinity">الملوحة EC</span></dt><dd>2.9 dS/m</dd></div>
+                <div><dt><svg class="ic"><use href="#i-thermo"/></svg><span data-i18n="m.temp">حرارة التربة</span></dt><dd>23°C</dd></div>
+                <div><dt><svg class="ic"><use href="#i-leaf"/></svg><span>NDVI</span></dt><dd>0.58</dd></div>
+              </dl>
+              <p class="sector__rec"><b data-i18n="preview.recT">التوصية:</b> <span data-i18n="preview.recP">رش وقائي ضد اللفحة المتأخرة خلال 24 ساعة، وتقليل الري 15% لمدة يومين.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alerts panel -->
+      <div class="panel" role="tabpanel" id="panel-alerts" aria-labelledby="tab-alerts" hidden>
+        <ul class="alerts">
+          <li class="alert alert--crit">
+            <span class="alert__ic"><svg class="ic"><use href="#i-alert"/></svg></span>
+            <div class="alert__body">
+              <div class="alert__top"><b data-i18n="preview.a1t">خطر لفحة متأخرة</b><span class="status status--crit" data-i18n="preview.lvlCrit">عاجل</span></div>
+              <p data-i18n="preview.a1p">قطاع B4 · طماطم · رطوبة نسبية 92% لمدة 10 ساعات وحرارة 16–20°C. يُنصح برش وقائي خلال 24 ساعة.</p>
+              <small data-i18n="preview.a1m">منذ 12 دقيقة · وصل على الموبايل</small>
+            </div>
+          </li>
+          <li class="alert alert--warn">
+            <span class="alert__ic"><svg class="ic"><use href="#i-droplet"/></svg></span>
+            <div class="alert__body">
+              <div class="alert__top"><b data-i18n="preview.a2t">ري مطلوب</b><span class="status status--warn" data-i18n="preview.lvlWarn">مهم</span></div>
+              <p data-i18n="preview.a2p">قطاع C1 · فراولة · رطوبة التربة 18% وأقل من حد الري المحدد (22%).</p>
+              <small data-i18n="preview.a2m">منذ ساعة · المهندس المسؤول: م. أحمد</small>
+            </div>
+          </li>
+          <li class="alert alert--warn">
+            <span class="alert__ic"><svg class="ic"><use href="#i-waves"/></svg></span>
+            <div class="alert__body">
+              <div class="alert__top"><b data-i18n="preview.a3t">ارتفاع الملوحة</b><span class="status status--warn" data-i18n="preview.lvlWarn">مهم</span></div>
+              <p data-i18n="preview.a3p">قطاع A2 · فلفل · EC وصل 3.8 dS/m. يُنصح بغسيل التربة في دورة الري الجاية.</p>
+              <small data-i18n="preview.a3m">منذ 3 ساعات</small>
+            </div>
+          </li>
+          <li class="alert alert--info">
+            <span class="alert__ic"><svg class="ic"><use href="#i-cloud"/></svg></span>
+            <div class="alert__body">
+              <div class="alert__top"><b data-i18n="preview.a4t">توقع موجة حارة</b><span class="status status--info" data-i18n="preview.lvlInfo">للعلم</span></div>
+              <p data-i18n="preview.a4p">حرارة متوقعة 39°C يوم الخميس. راجع جدول الري للقطاعات المكشوفة.</p>
+              <small data-i18n="preview.a4m">النهارده الصبح</small>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cost panel -->
+      <div class="panel" role="tabpanel" id="panel-cost" aria-labelledby="tab-cost" hidden>
+        <div class="cost">
+          <div class="cost__head">
+            <b data-i18n="preview.costTitle">تكلفة الفدان حسب المحصول · موسم 2026/2027</b>
+            <small data-i18n="preview.costUnit">بالجنيه المصري</small>
+          </div>
+          <table class="cost__table">
+            <thead>
+              <tr>
+                <th data-i18n="preview.thCrop">المحصول</th>
+                <th data-i18n="preview.thArea">المساحة</th>
+                <th data-i18n="preview.thCost" class="cost__barcol">تكلفة الفدان</th>
+                <th data-i18n="preview.thTop">أكبر بند</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-i18n="crop.strawberry">فراولة</td><td>60 <span data-i18n="unit.fed">فدان</span></td><td class="cost__barcol"><span class="bar" style="--w:100%"></span><b>96,500</b></td><td data-i18n="item.labor">عمالة</td></tr>
+              <tr><td data-i18n="crop.grapes">عنب</td><td>110 <span data-i18n="unit.fed">فدان</span></td><td class="cost__barcol"><span class="bar" style="--w:71%"></span><b>68,300</b></td><td data-i18n="item.labor">عمالة</td></tr>
+              <tr><td data-i18n="crop.tomato">طماطم</td><td>85 <span data-i18n="unit.fed">فدان</span></td><td class="cost__barcol"><span class="bar" style="--w:55%"></span><b>52,800</b></td><td data-i18n="item.fert">أسمدة</td></tr>
+              <tr><td data-i18n="crop.pepper">فلفل</td><td>40 <span data-i18n="unit.fed">فدان</span></td><td class="cost__barcol"><span class="bar" style="--w:50%"></span><b>48,100</b></td><td data-i18n="item.fert">أسمدة</td></tr>
+              <tr><td data-i18n="crop.potato">بطاطس</td><td>125 <span data-i18n="unit.fed">فدان</span></td><td class="cost__barcol"><span class="bar" style="--w:43%"></span><b>41,200</b></td><td data-i18n="item.seed">تقاوي</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="note-light" data-i18n="preview.note">* الشاشات والأرقام المعروضة بيانات توضيحية للتصميم فقط.</p>
+  </div>
+</section>
+
+<!-- ============ 7. Expected impact (placeholders until pilot data) ============ -->
+<section class="section" id="impact">
+  <div class="container">
+    <header class="sec-head">
+      <span class="eyebrow" data-i18n="impact.eyebrow">الفايدة المتوقعة</span>
+      <h2 data-i18n="impact.title">أرقام حقيقية، من مزارع حقيقية</h2>
+      <p data-i18n="impact.lead">بنقيس النتائج حاليًا مع المزارع المشاركة في التجربة. هننشر الأرقام أول ما تتثبت، ومش هنكتب رقم مش متأكدين منه.</p>
+    </header>
+    <!-- To publish a verified result: put the number in .stat__value (e.g. 23%) and remove the is-pending class. -->
+    <div class="stats">
+      <div class="stat is-pending reveal">
+        <svg class="ic"><use href="#i-droplet"/></svg>
+        <span class="stat__value">—</span>
+        <span class="stat__label" data-i18n="impact.s1">توفير في مياه الري</span>
+        <span class="stat__tag" data-i18n="impact.pending">بعد التجربة</span>
+      </div>
+      <div class="stat is-pending reveal">
+        <svg class="ic"><use href="#i-leaf"/></svg>
+        <span class="stat__value">—</span>
+        <span class="stat__label" data-i18n="impact.s2">تقليل خسائر المحصول</span>
+        <span class="stat__tag" data-i18n="impact.pending">بعد التجربة</span>
+      </div>
+      <div class="stat is-pending reveal">
+        <svg class="ic"><use href="#i-clock"/></svg>
+        <span class="stat__value">—</span>
+        <span class="stat__label" data-i18n="impact.s3">أسرع في اكتشاف المشكلة</span>
+        <span class="stat__tag" data-i18n="impact.pending">بعد التجربة</span>
+      </div>
+      <div class="stat is-pending reveal">
+        <svg class="ic"><use href="#i-sprout"/></svg>
+        <span class="stat__value">—</span>
+        <span class="stat__label" data-i18n="impact.s4">توفير في الأسمدة</span>
+        <span class="stat__tag" data-i18n="impact.pending">بعد التجربة</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. Who is it for ============ -->
+<section class="section section--tint section--tight" id="roles">
+  <div class="container">
+    <header class="sec-head">
+      <span class="eyebrow" data-i18n="roles.eyebrow">لمين؟</span>
+      <h2 data-i18n="roles.title">منصة واحدة، وكل واحد في الفريق بياخد اللي يهمه</h2>
+    </header>
+    <div class="roles">
+      <div class="role reveal">
+        <span class="icon-box"><svg class="ic"><use href="#i-briefcase"/></svg></span>
+        <div><h3 data-i18n="roles.r1t">مدير الإنتاج</h3><p data-i18n="roles.r1p">صورة كاملة للمزرعة، وتنبيهات مرتبة بالأولوية.</p></div>
+      </div>
+      <div class="role reveal">
+        <span class="icon-box"><svg class="ic"><use href="#i-sprout"/></svg></span>
+        <div><h3 data-i18n="roles.r2t">المهندس الزراعي</h3><p data-i18n="roles.r2p">قراءات كل قطاع، وتوصيات الري والتسميد والرش.</p></div>
+      </div>
+      <div class="role reveal">
+        <span class="icon-box"><svg class="ic"><use href="#i-calc"/></svg></span>
+        <div><h3 data-i18n="roles.r3t">المحاسب</h3><p data-i18n="roles.r3p">تكلفة كل محصول وقطاع، من غير شيتات متفرقة.</p></div>
+      </div>
+      <div class="role reveal">
+        <span class="icon-box"><svg class="ic"><use href="#i-shield"/></svg></span>
+        <div><h3 data-i18n="roles.r4t">مسؤول الجودة</h3><p data-i18n="roles.r4p">سجل كامل للمعاملات والرش يسهّل متطلبات التصدير والتتبع.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. Trust (pilot band until partners can be named) ============ -->
+<section class="section section--tight" id="trust">
+  <div class="container">
+    <div class="pilot reveal">
+      <img src="assets/img/field-scout.jpg" alt="مهندس زراعي يفحص ورقة نبات في الحقل" data-i18n-alt="trust.imgAlt" loading="lazy" width="1100" height="683" />
+      <div class="pilot__copy">
+        <span class="pill"><span class="dot"></span><span data-i18n="trust.pill">تجربة تجريبية مع مزارع مختارة</span></span>
+        <h2 data-i18n="trust.title">بنبني AgroNova جنب مزارع التصدير، مش بعيد عنها</h2>
+        <p data-i18n="trust.body">بنشتغل حاليًا مع عدد محدود من المزارع في مرحلة تجريبية، وكل ملاحظة منهم بتشكّل المنتج. لو عايز مزرعتك تكون منهم، احجز عرض وهنتكلم.</p>
+        <!-- When partners approve: replace this comment with their logos or a short quote. -->
+        <a href="#demo" class="btn btn--primary"><span data-i18n="trust.cta">انضم للتجربة</span><svg class="ic flip"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FAQ ============ -->
+<section class="section section--tint" id="faq">
+  <div class="container container--narrow">
+    <header class="sec-head">
+      <span class="eyebrow" data-i18n="faq.eyebrow">الأسئلة الشائعة</span>
+      <h2 data-i18n="faq.title">أسئلة بنسمعها كتير</h2>
+    </header>
+    <div class="faq">
+      <details>
+        <summary data-i18n="faq.q1">لو الإنترنت ضعيف في المزرعة؟</summary>
+        <p data-i18n="faq.a1">الحساسات بتحتفظ بالقراءات وتبعتها أول ما الاتصال يرجع، فمفيش بيانات بتضيع. وأثناء المعاينة بنحدد مع فريقك طريقة الاتصال الأنسب لموقع المزرعة.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q2">التركيب بياخد قد إيه؟</summary>
+        <p data-i18n="faq.a2">بيعتمد على مساحة المزرعة وعدد القطاعات. بعد المعاينة بنديك جدول تركيب واضح، والتركيب بيتم من غير ما يوقف شغل المزرعة.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q3">هل بيتربط بنظام المحاسبة عندنا؟</summary>
+        <p data-i18n="faq.a3">تقدر تصدّر التقارير المالية Excel. والربط المباشر بيتحدد حسب نظام المحاسبة اللي بتستخدموه، واسألنا عنه في العرض التجريبي.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q4">مين بيملك البيانات؟</summary>
+        <p data-i18n="faq.a4">بيانات مزرعتك ملكك. مش بنشاركها مع أي طرف تالت من غير موافقتك، وتقدر تطلب نسخة منها في أي وقت.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q5">التسعير: شراء ولا اشتراك؟</summary>
+        <p data-i18n="faq.a5">التسعير بيتحدد حسب المساحة وعدد الحساسات والخصائص اللي محتاجها. هنعرض عليك الاختيارات والتفاصيل في العرض التجريبي.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. Final CTA + form ============ -->
+<section class="section section--dark cta-final" id="demo">
+  <div class="container cta-final__grid">
+    <div class="cta-final__copy">
+      <span class="eyebrow eyebrow--light" data-i18n="demo.eyebrow">احجز عرض تجريبي</span>
+      <h2 data-i18n="demo.title">شوف AgroNova شغالة على مزرعة شبه مزرعتك</h2>
+      <p data-i18n="demo.lead">سيب بياناتك وهنكلمك نحدد معاد يناسبك.</p>
+      <ul class="checks">
+        <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="demo.b1">عرض أونلاين أو زيارة في المزرعة</span></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="demo.b2">نراجع مع فريقك احتياجات كل قطاع</span></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="demo.b3">من غير أي التزام بالشراء</span></li>
+      </ul>
+    </div>
+
+    <form class="form" id="demoForm" novalidate>
+      <div class="form__grid">
+        <div class="field">
+          <label for="f-name" data-i18n="form.name">الاسم</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required />
+          <small class="field__err" data-i18n="form.errRequired">الحقل ده مطلوب</small>
+        </div>
+        <div class="field">
+          <label for="f-company" data-i18n="form.company">الشركة / المزرعة</label>
+          <input id="f-company" name="company" type="text" autocomplete="organization" required />
+          <small class="field__err" data-i18n="form.errRequired">الحقل ده مطلوب</small>
+        </div>
+        <div class="field">
+          <label for="f-role" data-i18n="form.role">الوظيفة</label>
+          <select id="f-role" name="role" required>
+            <option value="" data-i18n="form.choose">اختار</option>
+            <option value="production_manager" data-i18n="roles.r1t">مدير الإنتاج</option>
+            <option value="agronomist" data-i18n="roles.r2t">المهندس الزراعي</option>
+            <option value="finance" data-i18n="form.roleFinance">محاسب / إدارة مالية</option>
+            <option value="quality" data-i18n="roles.r4t">مسؤول الجودة</option>
+            <option value="owner" data-i18n="form.roleOwner">صاحب المزرعة / الإدارة العليا</option>
+            <option value="other" data-i18n="form.roleOther">أخرى</option>
+          </select>
+          <small class="field__err" data-i18n="form.errRequired">الحقل ده مطلوب</small>
+        </div>
+        <div class="field">
+          <label for="f-area" data-i18n="form.area">المساحة بالفدان</label>
+          <input id="f-area" name="area" type="text" inputmode="numeric" dir="ltr" required placeholder="300" />
+          <small class="field__err" data-i18n="form.errArea">اكتب المساحة بالأرقام</small>
+        </div>
+        <div class="field">
+          <label for="f-crop" data-i18n="form.crop">المحصول</label>
+          <input id="f-crop" name="crop" type="text" list="crops" required data-i18n-ph="form.cropPh" placeholder="مثلًا: فراولة، عنب، موالح" />
+          <datalist id="crops">
+            <option value="فراولة"></option><option value="عنب"></option><option value="موالح"></option>
+            <option value="طماطم"></option><option value="بطاطس"></option><option value="فلفل"></option>
+            <option value="مانجو"></option><option value="رمان"></option><option value="بصل"></option>
+          </datalist>
+          <small class="field__err" data-i18n="form.errRequired">الحقل ده مطلوب</small>
+        </div>
+        <div class="field">
+          <label for="f-phone" data-i18n="form.phone">رقم الموبايل / واتساب</label>
+          <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required placeholder="01x xxxx xxxx" />
+          <small class="field__err" data-i18n="form.errPhone">اكتب رقم موبايل صحيح</small>
+        </div>
+      </div>
+      <!-- Honeypot: hidden from people, bots tend to fill it -->
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button type="submit" class="btn btn--primary btn--lg btn--block">
+        <svg class="ic"><use href="#i-calendar"/></svg><span data-i18n="cta.book">احجز عرض تجريبي</span>
+      </button>
+      <p class="form__privacy"><svg class="ic"><use href="#i-lock"/></svg><span data-i18n="form.privacy">بياناتك هنستخدمها بس عشان نتواصل معاك بخصوص العرض.</span></p>
+      <div class="form__done" id="formDone" hidden tabindex="-1">
+        <span class="icon-box icon-box--ok"><svg class="ic"><use href="#i-check"/></svg></span>
+        <h3 data-i18n="form.doneT">وصلنا طلبك، شكرًا!</h3>
+        <p data-i18n="form.doneP">فريق AgroNova هيتواصل معاك على الموبايل أو الواتساب خلال يوم عمل.</p>
+      </div>
+      <p class="form__fail" id="formFail" hidden data-i18n="form.fail">حصلت مشكلة في الإرسال. جرّب تاني أو كلمنا على الواتساب.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 12. Footer ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#top" class="brand brand--light">
+        <img src="assets/img/logo.png" alt="" width="34" height="37" />
+        <span class="brand__name" data-i18n="brand">AgroNova</span>
+      </a>
+      <p data-i18n="footer.tag">منصة زراعة ذكية بتساعد مزارع التصدير تاخد قراراتها بالأرقام.</p>
+      <div class="social">
+        <!-- TODO: replace # with the real profile URLs -->
+        <a href="#" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg class="ic"><use href="#i-facebook"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="ic"><use href="#i-instagram"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-i18n="footer.links">روابط</h4>
+      <ul>
+        <li><a href="#features" data-i18n="nav.features">المميزات</a></li>
+        <li><a href="#how" data-i18n="nav.how">إزاي بتشتغل</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">الأسئلة الشائعة</a></li>
+        <li><a href="#demo" data-i18n="cta.book">احجز عرض تجريبي</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.contact">تواصل معانا</h4>
+      <ul class="contact">
+        <li><a href="#" data-contact="email"><svg class="ic"><use href="#i-mail"/></svg><span data-contact-label="email">info@agronova.example</span></a></li>
+        <li><a href="#" data-contact="whatsapp" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg><span data-i18n="footer.whatsapp">واتساب</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.legal">قانوني</h4>
+      <ul>
+        <!-- TODO: link to the real privacy policy / terms pages -->
+        <li><a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a></li>
+        <li><a href="#" data-i18n="footer.terms">شروط الاستخدام</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <small>© <span id="year">2026</span> <span data-i18n="footer.rights">AgroNova. جميع الحقوق محفوظة.</span></small>
+  </div>
+</footer>
+
+<!-- Mobile sticky CTA (most visitors arrive from WhatsApp on a phone) -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <a href="#demo" class="btn btn--primary btn--block" tabindex="-1"><svg class="ic"><use href="#i-calendar"/></svg><span data-i18n="cta.book">احجز عرض تجريبي</span></a>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
